@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <h1>Kevin's lab</h1>
+    <router-link to="/">
+      <h1>Kevin's lab</h1>
+    </router-link>
+
     <router-view></router-view>
   </div>
 </template>
