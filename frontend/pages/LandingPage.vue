@@ -12,12 +12,14 @@ export default {
   data() {
     return {
       posts: [{
+        id: 1,
         title: "Welcome to Kevin's lab!",
         date: new Date(),
         author: "Kevin",
         description: "Welcome to the technical ramblings that go on in my brain. I will post information about my homelab, projects I undergo and tutorials as I find similar blogs on the internet very inspiring and informational; I can only hope that the same comes across here."
       },
       {
+        id: 2,
         title: "Building (another) NAS.",
         date: new Date(),
         author: "Kevin",
