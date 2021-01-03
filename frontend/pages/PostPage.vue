@@ -1,9 +1,11 @@
 <template>
   <div>
-    <h2>{{ post.title }}</h2>
+    <header>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.date }} by {{ post.author }}</p>
+    </header>
 
     <article>
-      <p>{{ post.date }} by {{ post.author }}</p>
 
       <img :src="post.thumbnail" />
       <p v-html="post.description"></p>
@@ -35,17 +37,37 @@ A lot has changed in my life over the last 6 months or so, moving out of my flat
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  font-size: 3rem;
+header {
   text-align: center;
-  margin-top: 4rem;
+
+  h2 {
+    font-size: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  margin-bottom: 4rem;
 }
+
+
 
 article {
   margin: 0 auto;
   width: 80vw;
 
   font-size: 1.2rem;
+
+  p, span {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 img {
