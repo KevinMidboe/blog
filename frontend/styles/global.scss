@@ -20,9 +20,15 @@
 body {
   font-family: Moderat, Helvetica Neue;
   margin: 0;
+
+  ::selection {
+    background-color: #72533b;
+    color: white;
+  }
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
