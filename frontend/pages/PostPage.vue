@@ -50,6 +50,8 @@ A lot has changed in my life over the last 6 months or so, moving out of my flat
 </script>
 
 <style lang="scss" scoped>
+@import '/public/assets/styles/markdown.css';
+
 header {
   text-align: center;
 
