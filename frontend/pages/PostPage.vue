@@ -5,7 +5,8 @@
       <p>{{ post.date }} by {{ post.author }}</p>
     </header>
 
-    <article>
+    <article class="markdown-body">
+      <p v-html="markdown" v-if="markdown"></p>
 
       <img :src="post.thumbnail" />
       <p v-html="post.description"></p>
@@ -19,7 +20,9 @@ import { humanReadableDate } from "@/utils";
 export default {
   data() {
     return {
+      markdown: undefined,
       post: {
+        id: 1,
         title: "Building (another) NAS.",
         date: humanReadableDate(new Date()),
         author: "Kevin",
@@ -31,6 +34,16 @@ A lot has changed in my life over the last 6 months or so, moving out of my flat
 
 <p>Join me on my newest endeavour to build a new NAS, or don’t of course.</p>` 
       }
+    }
+  },
+  created() {
+    this.fetchMarkdown();
+  },
+  methods: {
+    fetchMarkdown() {
+      fetch(`/api/post/${this.post.id}/render`)
+        .then(resp => resp.json())
+        .then(response => this.markdown = response.markdown)
     }
   }
 }
