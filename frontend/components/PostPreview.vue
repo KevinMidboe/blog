@@ -4,7 +4,7 @@
       <h2>{{ post.title }}</h2>
     </router-link>
 
-    <p><span>{{ post.date }}</span> by <span>{{ post.author }}</span></p>
+    <p><span>{{ humanReadableDate(post.date) }}</span> by <span>{{ post.author }}</span></p>
 
     <img v-if="post.thumbnail" :src="post.thumbnail" />
 
@@ -15,12 +15,17 @@
 </template>
 
 <script>
+import { humanReadableDate } from "@/utils";
+
 export default {
   props: {
     post: {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    humanReadableDate(date) { return humanReadableDate(date) }
   }
 }
 </script>
@@ -29,6 +34,7 @@ export default {
 
 h2 {
   font-size: 2rem;
+  display: inline-block;
 }
 
 img {
