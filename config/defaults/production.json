@@ -1,0 +1,8 @@
+{
+  "database": {
+    "user": "blog",
+    "password": null,
+    "host": "localhost",
+    "database": "blog"
+  }
+}
