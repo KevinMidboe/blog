@@ -1,0 +1,36 @@
+
+@font-face {
+  font-family: Moderat;
+  font-weight: normal;
+  font-style: normal;
+  src: url(/public/assets/fonts/Moderat-Regular.eot);
+  src: url(/public/assets/fonts/Moderat-Regular.eot?#iefix) format("embedded-opentype"), url(/public/assets/fonts/Moderat-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Moderat;
+  font-weight: 700;
+  font-style: normal;
+  src: url(/public/assets/fonts/Moderat-Bold.eot);
+  src: url(/public/assets/fonts/Moderat-Bold.eot?#iefix) format("embedded-opentype"),
+       url(/public/assets/fonts/Moderat-Bold.woff2) format("woff2"),
+       url(/public/assets/fonts/Moderat-Bold.woff) format("woff");
+}
+
+body {
+  font-family: Moderat, Helvetica Neue;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: 1.1rem;
+  border: 1px solid rgba(#333333, 0.3);
+}
