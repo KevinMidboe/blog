@@ -25,9 +25,9 @@ function renderPost(req, res) {
 
 function updatePost(req, res) {
   const { id } = req.params;
-  const { markdown } = req.body;
+  const { markdown, title } = req.body;
 
-  return postRepository.updatePost(id, markdown)
+  return postRepository.updatePost(id, markdown, title)
     .then(fileUpdated => res.json({
       message: "Successfully updated post " + id,
       filename: fileUpdated,

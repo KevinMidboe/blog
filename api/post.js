@@ -24,10 +24,10 @@ class PostRepository {
     return this.database.get(query, [id])
   }
 
-  updatePost(id, markdown="## database testost") {
-    const query = `UPDATE posts SET markdown = $1 WHERE id = $2`;
+  updatePost(id, markdown="## database testost", title="undefined title") {
+    const query = `UPDATE posts SET markdown = $1, title = $2 WHERE id = $3`;
 
-    const post = this.database.update(query, [markdown, id]);
+    const post = this.database.update(query, [markdown, title, id]);
 
     return post
       .then(post => true)
