@@ -13,7 +13,8 @@ steps:
   commands:
     - node -v
     - yarn --version
-- name: backend_build
+
+- name: frontend_build
   image: node:14
   commands:
     - node -v
@@ -25,6 +26,8 @@ steps:
   pull: true
   secrets:
     - ssh_key
+    - user
+    - host_address
   when:
     event:
       - push
@@ -33,8 +36,10 @@ steps:
       - drone-test
     status: success
   settings:
-    host: 10.0.0.58
-    username: root
+    host:
+      from_secret: host_address
+    username:
+      from_secret: user
     key:
       from_secret: ssh_key
     command_timeout: 600s
