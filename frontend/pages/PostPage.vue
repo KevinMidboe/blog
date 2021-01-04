@@ -3,7 +3,7 @@
     <header>
       <div class="title">
         <h2>{{ post.title }}</h2>
-        <router-link :to="'/edit/' + id" class="icon">✏️ </router-link>
+        <router-link v-if="admin" :to="'/edit/' + id" class="icon">✏️ </router-link>
       </div>
 
       <p>created {{ humanReadableDate(post.created) }},</p>
@@ -26,6 +26,7 @@ import { humanReadableDate } from "@/utils";
 export default {
   data() {
     return {
+      admin: false,
       markdown: undefined,
       id: this.$route.params.id,
       post: undefined,
